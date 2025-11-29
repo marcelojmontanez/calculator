@@ -104,6 +104,7 @@ function evaluate() {
     screenCurrent.textContent = 
         operate(currentOperator, leftOperand, rightOperand);
     currentOperator = '';
+    shouldResetScreen = true;
 }
 
 function add(a, b) { return a + b; }
