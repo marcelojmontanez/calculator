@@ -25,22 +25,35 @@ main {
 }
 
 .calculator {
-    background: grey;
+    background-color: gray;
     padding: 8px;
     border-radius: 8px;
+    width: min(90vw, 420px);
+    font-size: 2em;
+}
+
+.screen {
+    background-color: lightgray;
 }
 
 .button-grid {
+    --gap: 6px;
     display: flex;
     flex-wrap: wrap;
+    gap: var(--gap);
 }
 
 .button-grid > .btn {
-    flex: 0 0 calc(100% / 4);
+    flex: 0 0 calc((100% - 3 * var(--gap)) / 4);
+    aspect-ratio: 1;
+    font-size: inherit;
+    line-height: 1;
+    border-radius: 4px;
 }
 
-.button-grid > .span-2 {
-    flex: 0 0 50%;
+.button-grid > .btn-wide {
+    flex: 0 0 calc((100% - var(--gap)) / 2);
+    aspect-ratio: 2;
 }
 
 footer {
