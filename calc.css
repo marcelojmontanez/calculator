@@ -40,12 +40,22 @@ main {
     background-color: #e7e7e7;
     border-radius: 4px;
     height: min(20vw, 100px);
+    width: 100%;
     padding: 12px;
 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: flex-end;
+}
+
+.screen-last,
+.screen-current {
+    width: 100%;
+    text-align: right;
+}
+
+.screen-last {
+    font-size: .6em;
 }
 
 .button-grid {
