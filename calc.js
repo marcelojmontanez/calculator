@@ -28,31 +28,18 @@ pointButton.addEventListener('click', appendPoint);
 equalsButton.addEventListener('click', evaluate);
 
 function handleKeyboardInput(e) {
-    switch (e.key) {
-        case 'Escape':
-            clear();
-            break;
-        case 'Backspace':
-        case 'Delete':
-            deleteNumber();
-            break;
-        case '.':
-            appendPoint();
-            break;
-        case 'Enter':
-        case '=':
-            evaluate();
-        default:
-            if (0 <= e.key && e.key <= 9) appendNumber(e.key);
-            if (['+','-','*','/'].includes(e.key))
-                setOperator(keyToOperator(e.key));
-    }
+    const btn = document.querySelector(`[data-key~="${e.key}"]`);
+    flash(btn);
+    btn.click();
 }
 
-function keyToOperator(key) {
-    if (key === '*') return MULTIPLICATION_SYMBOL;
-    if (key === '/') return DIVISION_SYMBOL;
-    return key;
+function findButtonForKey(key) {
+    document.querySelector(`[data-key~="${e.key}"]`);
+}
+
+function flash(btn) {
+    btn.classList.add('keyflash');
+    setTimeout(() => btn.classList.remove('keyflash'), 100);
 }
 
 function resetScreen() {

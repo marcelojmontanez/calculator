@@ -63,7 +63,8 @@ main {
     cursor: pointer;
 }
 
-.btn:hover {
+.btn:hover,
+.btn.keyflash {
     background-color: hsl(0, 0%, 60%);
 }
 
@@ -71,7 +72,8 @@ main {
     background-color: hsl(0, 100%, 70%);
 }
 
-.btn-red:hover {
+.btn-red:hover,
+.btn-red.keyflash {
     background-color: hsl(0, 50%, 50%);
 }
 
