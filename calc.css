@@ -1,5 +1,6 @@
 :root {
     --background: #fff;
+    --gap: 12px;
 }
 
 * {
@@ -26,21 +27,52 @@ main {
 
 .calculator {
     background-color: gray;
-    padding: 8px;
+    padding: 24px;
     border-radius: 8px;
     width: min(90vw, 420px);
     font-size: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
 }
 
 .screen {
-    background-color: lightgray;
+    background-color: #e7e7e7;
+    border-radius: 4px;
+    height: min(20vw, 100px);
+    padding: 12px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
 }
 
 .button-grid {
-    --gap: 6px;
     display: flex;
     flex-wrap: wrap;
     gap: var(--gap);
+}
+
+.btn {
+    border: none;
+    border-radius: 4px;
+    background-color: hsl(0, 0%, 90%);
+    color: #000;
+    font: inherit;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: hsl(0, 0%, 60%);
+}
+
+.btn-red {
+    background-color: hsl(0, 100%, 70%);
+}
+
+.btn-red:hover {
+    background-color: hsl(0, 50%, 50%);
 }
 
 .button-grid > .btn {
@@ -48,7 +80,6 @@ main {
     aspect-ratio: 1;
     font-size: inherit;
     line-height: 1;
-    border-radius: 4px;
 }
 
 .button-grid > .btn-wide {
