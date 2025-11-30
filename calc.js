@@ -29,12 +29,9 @@ equalsButton.addEventListener('click', evaluate);
 
 function handleKeyboardInput(e) {
     const btn = document.querySelector(`[data-key~="${e.key}"]`);
+    if (!btn) return;
     flash(btn);
     btn.click();
-}
-
-function findButtonForKey(key) {
-    document.querySelector(`[data-key~="${e.key}"]`);
 }
 
 function flash(btn) {
