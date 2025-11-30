@@ -56,7 +56,11 @@ function clear() {
 
 function appendNumber(number) {
     if (screenCurrent.textContent === '0' || shouldResetScreen) resetScreen();
+    const old = screenCurrent.textContent;
     screenCurrent.textContent += number;
+    console.log(`scroll: ${screenCurrent.scrollWidth}, client: ${screenCurrent.clientWidth}`);
+    if (screenCurrent.scrollWidth > screenCurrent.clientWidth)
+        screenCurrent.textContent = old;
 }
 
 function deleteNumber() {
